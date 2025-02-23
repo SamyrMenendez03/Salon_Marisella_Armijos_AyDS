@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pedidos - Peluquería</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: contents;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        table th {
+            background: #333;
+            color: white;
+        }
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        table tr:hover {
+            background: #f1f1f1;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .pending {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .shipped {
+            background-color: #28a745;
+            color: white;
+        }
+        .delivered {
+            background-color: #17a2b8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Lista de Pedidos - Peluquería
+    </header>
+
+    <div class="container">
+        <h2>Pedidos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Pedido</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio por Unidad</th>
+                    <th>Total</th>
+                    <th>Estado de Entrega</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Champú Hidratante</td>
+                    <td>3</td>
+                    <td>$15.00</td>
+                    <td>$45.00</td>
+                    <td><span class="status pending">Pendiente</span></td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Acondicionador Reparador</td>
+                    <td>2</td>
+                    <td>$20.00</td>
+                    <td>$40.00</td>
+                    <td><span class="status shipped">Enviado</span></td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Mascarilla Capilar</td>
+                    <td>1</td>
+                    <td>$25.00</td>
+                    <td>$25.00</td>
+                    <td><span class="status delivered">Entregado</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+ 

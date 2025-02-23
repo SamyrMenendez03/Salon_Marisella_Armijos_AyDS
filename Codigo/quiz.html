@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Belleza - Peluquería</title>
+    <style>
+        /* Globales */
+        *::after,
+        *::before,
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+            max-width: 1200px;
+            font-family: 'Lato', sans-serif;
+            color: #ffffff;
+        }
+
+        .nerko-one-regular {
+            font-family: "Nerko One", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            font-family: "Nerko One", cursive;
+            padding-bottom: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #2c2b2b;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            border: none;
+            background-color: #000;
+            color: #fff;
+            padding: 15px 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="nerko-one-regular">Cuestionario de Belleza</h1>
+    <h3>Realiza el cuestionario</h3>
+    <form action="/enviar-cuestionario" method="POST">
+        <!-- Información básica -->
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Pregunta sobre tipo de cabello -->
+        <label for="tipo-cabello">¿Cuál es tu tipo de cabello?</label>
+        <select id="tipo-cabello" name="tipo_cabello" required>
+            <option value="liso">Liso</option>
+            <option value="ondulado">Ondulado</option>
+            <option value="rizado">Rizado</option>
+            <option value="afro">Afro</option>
+        </select>
+
+        <!-- Pregunta sobre longitud del cabello -->
+        <label for="longitud-cabello">¿Cuál es la longitud de tu cabello?</label>
+        <select id="longitud-cabello" name="longitud_cabello" required>
+            <option value="corto">Corto</option>
+            <option value="medio">Medio</option>
+            <option value="largo">Largo</option>
+        </select>
+
+        <!-- Pregunta sobre frecuencia de visitas -->
+        <label>¿Con qué frecuencia visitas la peluquería?</label>
+        <input type="radio" id="mensual" name="frecuencia_visitas" value="mensual" required>
+        <label for="mensual">Mensual</label><br>
+        <input type="radio" id="trimestral" name="frecuencia_visitas" value="trimestral">
+        <label for="trimestral">Cada tres meses</label><br>
+        <input type="radio" id="anual" name="frecuencia_visitas" value="anual">
+        <label for="anual">Anual</label>
+
+        <!-- Pregunta sobre servicios de preferencia -->
+        <label>¿Qué servicios te interesan más? (selecciona los que apliquen)</label>
+        <input type="checkbox" id="corte" name="servicios[]" value="corte">
+        <label for="corte">Corte de cabello</label><br>
+        <input type="checkbox" id="coloracion" name="servicios[]" value="coloracion">
+        <label for="coloracion">Coloración</label><br>
+        <input type="checkbox" id="tratamiento" name="servicios[]" value="tratamiento">
+        <label for="tratamiento">Tratamientos capilares</label><br>
+        <input type="checkbox" id="peinado" name="servicios[]" value="peinado">
+        <label for="peinado">Peinado para eventos</label>
+
+        <!-- Pregunta sobre productos -->
+        <label for="productos-favoritos">¿Cuáles son tus productos de belleza favoritos?</label>
+        <textarea id="productos-favoritos" name="productos_favoritos" rows="4" placeholder="Escribe aquí tus productos favoritos..."></textarea>
+
+        <!-- Pregunta sobre cambios de look -->
+        <label for="cambio-look">¿Te gustaría un cambio de look?</label>
+        <select id="cambio-look" name="cambio_look" required>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+            <option value="no_estoy_seguro">No estoy seguro</option>
+        </select>
+
+        <!-- Comentarios adicionales -->
+        <label for="comentarios">¿Tienes algún comentario o solicitud especial?</label>
+        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios..."></textarea>
+
+        <!-- Botón de enviar -->
+        <button type="submit">Enviar Cuestionario</button>
+    </form>
+</div>
+
+</body>
+</html>
